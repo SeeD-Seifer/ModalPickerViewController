@@ -32,9 +32,21 @@ namespace SharpMobileCode.ModalPicker
 
         public UIColor HeaderBackgroundColor { get; set; }
         public UIColor HeaderTextColor { get; set; }
-		public string HeaderText { get; set; }
 		public string DoneButtonText { get; set; }
 		public string CancelButtonText { get; set; }
+
+		private string _headerText;
+		public string HeaderText 
+		{
+			get { return _headerText; }
+			set 
+			{
+				_headerText = value;
+				if (_headerLabel != null) {
+					_headerLabel.Text = value;
+				}
+			}
+		}
 
         public UIDatePicker DatePicker { get; set; }
         public UIPickerView PickerView { get; set; }
